@@ -81,11 +81,11 @@ const App = () => {
 
   return (
     <div>
-      <button onClick={handleSubmit}>Submit</button>
+      <button onClick={handleSubmit} style={{backgroundColor:"orange"}}>Submit</button>
       {data && (
         <div>
           <canvas id="chart" width="400" height="200" ref={plotChart} />
-          <button onClick={handleExport}>Export</button>
+          <button onClick={handleExport} style={{backgroundColor:"orange"}}>Export</button>
         </div>
       )}
     </div>
