@@ -39,7 +39,7 @@ const plotChart = () => {...}: a Chart.js script that displays a histogram of th
 
 
 
-
+Live Deployment Link on Github : https://pragati2701.github.io/terribly/
 
 
 
