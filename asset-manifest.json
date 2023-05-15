@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/terribly/static/css/main.e6c13ad2.css",
+    "main.js": "/terribly/static/js/main.924a21fc.js",
+    "static/js/787.2dfe9938.chunk.js": "/terribly/static/js/787.2dfe9938.chunk.js",
+    "index.html": "/terribly/index.html",
+    "main.e6c13ad2.css.map": "/terribly/static/css/main.e6c13ad2.css.map",
+    "main.924a21fc.js.map": "/terribly/static/js/main.924a21fc.js.map",
+    "787.2dfe9938.chunk.js.map": "/terribly/static/js/787.2dfe9938.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.924a21fc.js"
+  ]
+}
