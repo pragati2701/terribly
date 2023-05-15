@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Word Frequency Histogram
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React application that fetches a text file and generates a histogram of the top 20 most frequent words in the file. It also includes an export button that allows the user to download the data as a CSV file.
 
-## Available Scripts
+The code uses the following libraries and plugins:
 
-In the project directory, you can run:
+React: A JavaScript library for building user interfaces.
+useState: A React hook for managing state.
+Chart.js: A JavaScript library for creating charts and graphs.
+Chart.js/auto: A Chart.js plugin that automatically installs all required chart types and components.
+fetch: A JavaScript method for making HTTP requests.
+Blob: A JavaScript class for handling raw data as binary objects.
+URL: A JavaScript API for creating and manipulating URLs.
+document: A JavaScript object that represents the current HTML document.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+breakdown of the main parts of the code:-
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+const [data, setData] = useState(null); :    a state hook that sets data's initial value to zero. The top 20 most often occurring terms and their counts will be kept in this condition.
 
-### `npm test`
+const handleSubmit = async () => {...}:An asynchronous function that retrieves the text file and performs word frequency analysis on it, identifying the top 20 words by counting the number of words in the text, ranking the words by frequency, and breaking the text into words. After that, the obtained data is kept in the data state.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+const handleExport = () => {...}: a function that downloads a CSV file from the data state and converts it.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+const plotChart = () => {...}: a Chart.js script that displays a histogram of the top 20 most used words. If the data state is not null, then this method is invoked.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+<button onClick={handleSubmit}>Submit</button>: A button that triggers the handleSubmit function when clicked.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+{data && (...)}: The following code is rendered conditionally and only if data is not null.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<canvas id="chart" width="400" height="200" ref={plotChart} />:a canvas element that makes use of Chart.js to render the histogram. When the component mounts, the plotChart function is called using the ref attribute.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<button onClick={handleExport}>Export</button>: A button that triggers the handleExport function when clicked.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+To get started with the application, you will need to have Node.js and NPM installed on your machine. Once you have these installed, follow these steps:
 
-### Deployment
+1. Clone the repository to your local machine.
+2. In the project directory, run `npm install` to install the required dependencies.
+3. Run `npm start` to start the application.
+4. Open `http://localhost:3000` in your web browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Usage
 
-### `npm run build` fails to minify
+Simply click the "Submit" button to start the application and have it fetch and analyse the text file. A histogram of the top 20 most used words will be shown after the analysis is finished, along with an export button. When the export button is clicked, the data is downloaded as a CSV file.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Libraries and Plugins
+
+The following libraries and plugins are used in the application:
+
+- React
+- Chart.js
+- Chart.js/auto
+
