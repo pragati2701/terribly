@@ -10,12 +10,12 @@ const App = () => {
   const handleSubmit = async () => {
     const response = await fetch('https://www.terriblytinytales.com/test.txt');
     const text = await response.text();
-    const words = text.split(/\W+/); // split text into words
+    const words = text.split(/\W+/); // splitting the  text into words
     const freq = {};
     for (let word of words) {
-      freq[word] = (freq[word] || 0) + 1; // count frequency of each word
+      freq[word] = (freq[word] || 0) + 1; // counting  frequency of each word
     }
-    const sorted = Object.entries(freq).sort((a, b) => b[1] - a[1]); // sort by frequency
+    const sorted = Object.entries(freq).sort((a, b) => b[1] - a[1]); // sorting by frequency
     const top20 = sorted.slice(0, 20); // get top 20 words
     const labels = top20.map(([word]) => word);
     const data = top20.map(([, count]) => count);
@@ -80,12 +80,14 @@ const App = () => {
   };
 
   return (
-    <div>
-      <button onClick={handleSubmit} style={{backgroundColor:"orange"}}>Submit</button>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <button onClick={handleSubmit} style={{backgroundColor:"orange",fontSize: '1.2em', width: '8em', alignSelf: 'center'}}>Submit</button>
       {data && (
-        <div>
-          <canvas id="chart" width="400" height="200" ref={plotChart} />
-          <button onClick={handleExport} style={{backgroundColor:"orange"}}>Export</button>
+        <div  style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        
+          <canvas id="chart" width="800" height="400" ref={plotChart} />
+
+          <button onClick={handleExport} style={{backgroundColor:"orange",fontSize: '1.2em', width: '8em', alignSelf: 'center'}}>Export</button>
         </div>
       )}
     </div>
